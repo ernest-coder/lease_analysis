@@ -1,0 +1,12 @@
+<div class="py-6 px-20 flex flex-col w-[42rem] justify-center items-center">
+    <span
+        class="material-symbols-sharp p-3 text-5xl bg-red-50 text-primary-red rounded-full ">error</span>
+    <h1 class="text-2xl font-semibold mt-6 text-center">{{data.titleKey}}</h1>
+    <p class="my-6 text-gray-700">
+        {{data.messageKey}}
+    </p>
+
+    <div class="flex flex-row space-x-3 justify-stretch self-stretch">
+        <app-button-cancel mat-dialog-close class="flex-1">{{"global.ok"}}</app-button-cancel>
+    </div>
+</div>

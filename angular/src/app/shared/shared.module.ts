@@ -19,6 +19,7 @@ import {ButtonSuccessComponent} from "./components/buttons/button-success/button
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ButtonWarningLightComponent} from "./components/buttons/button-warning-light/button-warning-light.component";
 import {MatMenuModule} from "@angular/material/menu";
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 
 
 
@@ -32,6 +33,7 @@ import {MatMenuModule} from "@angular/material/menu";
     ButtonWarningLightComponent,
     ButtonSuccessComponent,
     ButtonCancelComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     MatTooltipModule,
@@ -56,6 +58,7 @@ import {MatMenuModule} from "@angular/material/menu";
     ButtonWarningLightComponent,
     ButtonSuccessComponent,
     ButtonCancelComponent,
+    ErrorDialogComponent,
   ],
   providers: [],
 })

@@ -7,11 +7,15 @@ import { TopBarComponent } from './layout/top-bar/top-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './shared/shared.module';
+import { HomePageComponent } from './features/home/home-page/home-page.component';
+import { UploadFileAreaComponent } from './shared/components/upload-file-area/upload-file-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopBarComponent
+    TopBarComponent,
+    HomePageComponent,
+    UploadFileAreaComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +25,9 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
   ],
   providers: [],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
