@@ -1,0 +1,20 @@
+<div class="items-center justify-center flex flex-col w-full">
+    <h1>Instant Lease Analysis and Summary.</h1>
+    <p>Identify key points and potential issues in your lease.</p>
+    <app-upload-file-area
+    id="file"
+    acceptType=".csv"
+    [dropZoneMessageKey]="
+      'csv_import.create.file.drop_zone_message'
+    "
+    [errorMessageKey]="
+      'csv_import.create.file.format_error'
+    "
+    [errorTitleKey]="
+      'csv_import.create.file.format_error_title'
+    "
+    (requestUploadFile)="onFileSelected($event)"
+    [selectedFiles]="selectedFiles"
+  ></app-upload-file-area>
+</div>
+  
