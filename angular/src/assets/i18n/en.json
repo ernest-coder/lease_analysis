@@ -1,0 +1,40 @@
+{
+    "global": {
+      "duration_prefix": "since",
+      "duration_ongoing_prefix": "in",
+      "loading": "Loading...",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "close": "Close",
+      "create": "Create",
+      "edit": "Edit",
+      "delete": "Delete",
+      "send": "Send",
+      "back": "Back",
+      "next": "Next",
+      "copy": "Copy",
+      "uploading": "Uploading",
+      "download": "Download",
+      "previous": "Previous",
+      "home": "Home",
+      "ok": "Ok",
+      "no": "No",
+      "confirm": "Confirm",
+      "expired": "Expired"
+    },
+
+    "lease_import":{
+        "create": {
+            "error": "An error occurred, please try again.",
+            "file": {
+              "label": "Upload a Lease file in PDF or Word format",
+              "label_sub": "",
+              "required": "File is required.",
+              "drop_zone_message": "Drop your Lease here or click to upload",
+              "format_error_title": "Invalid format",
+              "format_error": "The file must be an audio file in .pdf or .docx format."
+            }
+        }
+    }
+}
