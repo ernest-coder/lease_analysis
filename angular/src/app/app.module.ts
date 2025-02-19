@@ -13,6 +13,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './shared/services/language.service';
+import { CommonModule } from '@angular/common';
+import { QuestionListComponent } from './features/question/question-list/question-list.component';
+import { TemplatePageComponent } from './features/template/template-page/template-page.component';
+import { TemplateItemComponent } from "./features/template/template-item/template-item.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,23 +27,27 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     TopBarComponent,
     HomePageComponent,
-    UploadFileAreaComponent
+    UploadFileAreaComponent,
+    QuestionListComponent,
+    TemplatePageComponent,
+    TemplateItemComponent
   ],
   imports: [
     HttpClientModule,
     TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
     }),
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    SharedModule
-  ],
+    SharedModule,
+],
   providers: [
     {
       provide: LOCALE_ID,

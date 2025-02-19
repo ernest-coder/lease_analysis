@@ -1,0 +1,24 @@
+<div *ngIf="template">
+    <div
+        class="flex flex-col w-full p-4 border border-gray-200 rounded-lg cursor-pointer"
+        (click)="toggleQuestions()"
+    >
+        <h2>{{template.name}}</h2>
+        <p>{{template.description}}</p>
+        <div *ngIf="showQuestions" class="mt-4">
+            <div *ngFor="let category of categories" class="mb-4">
+                <h3 class="font-semibold mt-3">{{category}}</h3>
+                <div class="mt-1 flex flex-row gap-2 items-center justify-start flex-wrap">
+                    <div
+                        *ngFor="let question of questionsByCategory[category]"
+                        class="flex"
+                    >
+                        <p class="border rounded-full px-4 py-2 flex break-words">
+                            {{question.title}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

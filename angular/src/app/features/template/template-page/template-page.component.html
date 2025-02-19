@@ -1,0 +1,12 @@
+<div>
+    <h1>{{'template.title'|translate}}</h1>
+    <p>{{'template.subtitle'|translate}}</p>
+    <div *ngIf="templates && templates.length > 0" class="flex flex-col w-full">
+        <div class="flex flex-col w-full">
+            <div *ngFor="let template of templates">
+                <app-template-item [template]="template"></app-template-item>
+            </div>
+        </div>
+
+    </div>
+</div>

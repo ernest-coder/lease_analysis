@@ -1,0 +1,12 @@
+ 
+
+<div *ngIf="questions" class="flex flex-col w-full">
+  <div class="flex flex-row justify-between items-center">
+    <h1>questions</h1>
+  </div>
+  <div class="flex flex-col w-full">
+    <div *ngFor="let question of questions">
+        <p> {{question.content}} </p>
+    </div>
+  </div>
+</div>
