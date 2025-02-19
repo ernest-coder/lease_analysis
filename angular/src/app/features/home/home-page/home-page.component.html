@@ -1,9 +1,12 @@
 <div class="items-center justify-center flex flex-col w-full">
-    <h1>Instant Lease Analysis and Summary.</h1>
-    <p>Identify key points and potential issues in your lease.</p>
+    <h1>{{ 'home.title' | translate }}</h1>
+    <p>{{ 'home.subtitle' | translate }}</p>
     <app-upload-file-area
     id="file"
-    acceptType=".csv"
+    acceptType=".pdf,.doc,.docx,.PDF,.DOC,.DOCX"
+    [dropZoneTitleKey]="
+      'lease_import.create.file.drop_zone_title'
+    "
     [dropZoneMessageKey]="
       'lease_import.create.file.drop_zone_message'
     "

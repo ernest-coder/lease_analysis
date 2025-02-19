@@ -21,7 +21,7 @@
       </li>
     </ul>
     <p *ngIf="dropZoneTitleKey && !isDisabled" class="mt-2 text-lg font-semibold text-primary-dttl-green text-center items-center justify-center" [innerHTML]="dropZoneTitleKey|translate"></p>
-    <p class="font-semibold mt-2 items-center justify-center" *ngIf="!isDisabled">{{dropZoneMessageKey|translate}}</p>
+    <p class="mt-2 items-center justify-center" *ngIf="!isDisabled">{{dropZoneMessageKey|translate}}</p>
   </label>
   <input [accept]="acceptType" (change)="submitFiles($event)" type="file" [multiple]="allowMultipleFiles" hidden
          id="upload-zone-{{index}}" [disabled]="isDisabled">

@@ -23,17 +23,22 @@
       "confirm": "Confirm",
       "expired": "Expired"
     },
-
+    "home": {
+      "title": "Instant Lease Analysis and Summary.",
+      "subtitle": "Identify key points and potential issues in your lease."
+    },
     "lease_import":{
         "create": {
             "error": "An error occurred, please try again.",
+            "success": "The file was uploaded successfully.",
             "file": {
               "label": "Upload a Lease file in PDF or Word format",
               "label_sub": "",
               "required": "File is required.",
-              "drop_zone_message": "Drop your Lease here or click to upload",
+              "drop_zone_title": "Drag and Drop your Lease here or click to upload",
+              "drop_zone_message": "We accept PDF and Word files",
               "format_error_title": "Invalid format",
-              "format_error": "The file must be an audio file in .pdf or .docx format."
+              "format_error": "The file must be a lease in .pdf or .docx format."
             }
         }
     }
