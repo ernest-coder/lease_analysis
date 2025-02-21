@@ -22,6 +22,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { AlertToastComponent } from './components/alert-toast/alert-toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 
 
@@ -37,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonCancelComponent,
     ErrorDialogComponent,
     AlertToastComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -64,6 +66,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonCancelComponent,
     ErrorDialogComponent,
     AlertToastComponent,
+    BreadcrumbComponent,
   ],
   providers: [],
 })

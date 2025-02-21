@@ -46,5 +46,13 @@
       "title": "Choose a Template",
       "subtitle": "Select a template to start your lease analysis.",
       "select_template": "Select this Template"
+    },
+    "breadcrumb": {
+      "title_1": "Upload Lease",
+      "subtitle_1": "Upload your lease to start the analysis.",
+      "title_2": "Choose a Template",
+      "subtitle_2": "Select a template to start your lease analysis.",
+      "title_3": "Lease Analysis",
+      "subtitle_3": "Review the lease analysis and summary."
     }
 }
