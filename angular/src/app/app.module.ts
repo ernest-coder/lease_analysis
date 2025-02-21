@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './layout/top-bar/top-bar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './features/home/home-page/home-page.component';
@@ -17,6 +16,8 @@ import { CommonModule } from '@angular/common';
 import { QuestionListComponent } from './features/question/question-list/question-list.component';
 import { TemplatePageComponent } from './features/template/template-page/template-page.component';
 import { TemplateItemComponent } from "./features/template/template-item/template-item.component";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,9 +45,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     SharedModule,
+    MatTooltipModule,
 ],
   providers: [
     {
@@ -54,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       deps: [LanguageService],
       useFactory: (localeService: LanguageService) => localeService.getCurrentLanguage(),
     },
+    provideAnimationsAsync(),
   ],  exports: [
 
   ],

@@ -44,7 +44,7 @@
     },
     "template": {
       "title": "Choose a Template",
-      "subtitle": "Select a template to start your lease analysis."
-
+      "subtitle": "Select a template to start your lease analysis.",
+      "select_template": "Select this Template"
     }
 }

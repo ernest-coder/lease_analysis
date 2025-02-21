@@ -3,8 +3,21 @@
         class="flex flex-col w-full p-4 border border-gray-200 rounded-lg cursor-pointer"
         (click)="toggleQuestions()"
     >
-        <h2>{{template.name}}</h2>
-        <p>{{template.description}}</p>
+        <div class="flex flex-row items-center justify-between">
+            <div>
+                <h2>{{template.name}}</h2>
+                <p>{{template.description}}</p>
+            </div>
+            <app-button-primary (click)="$event.stopPropagation()">{{'template.select_template'|translate}}
+                <div class="ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                    </svg>                  
+                </div>
+
+            </app-button-primary>
+        </div>
+
         <div *ngIf="showQuestions" class="mt-4">
             <div *ngFor="let category of categories" class="mb-4">
                 <h3 class="font-semibold mt-3">{{category}}</h3>
@@ -13,9 +26,11 @@
                         *ngFor="let question of questionsByCategory[category]"
                         class="flex"
                     >
-                        <p class="border rounded-full px-4 py-2 flex break-words">
+                        <span class="border rounded-full px-4 py-2 flex break-words" 
+                            [matTooltip]="question.content"
+                        >
                             {{question.title}}
-                        </p>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError, from, Subject, takeUntil } from 'rxjs';
 import { AlertToastService } from 'src/app/shared/services/alert-toast.service';
@@ -22,6 +23,7 @@ export class HomePageComponent implements OnDestroy {
     private supabaseService: SupabaseService,
     private translateService: TranslateService,
     private alertToastService: AlertToastService,
+    private router: Router,
   ) {
     this.formGroup = this.fb.group({
       file: [null, Validators.required],
@@ -69,6 +71,7 @@ export class HomePageComponent implements OnDestroy {
         const message = this.translateService.instant('lease_import.create.success');
         this.alertToastService.success(message)
         this.isLoading = false;
+        this.router.navigate([`/templates/`]);
       },
       error => {
         const message = this.translateService.instant('lease_import.create.error');
