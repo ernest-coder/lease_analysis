@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Question } from 'src/app/shared/models/question.models';
 import { Template } from 'src/app/shared/models/template.models';
 import { AlertToastService } from 'src/app/shared/services/alert-toast.service';
@@ -20,7 +21,8 @@ export class TemplateItemComponent {
 
   constructor(
     private templateService: TemplateService,
-    private alertToastService: AlertToastService
+    private alertToastService: AlertToastService,
+    private router: Router,
   ) { }
 
   toggleQuestions(): void {
@@ -56,5 +58,10 @@ export class TemplateItemComponent {
       acc[question.category].push(question);
       return acc;
     }, {} as { [key: string]: Question[] });
+  }
+
+  selectTemplate($event: Event): void {
+    $event.stopPropagation();
+    this.router.navigate(['/analyze']);
   }
 }

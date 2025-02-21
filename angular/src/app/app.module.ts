@@ -18,6 +18,7 @@ import { TemplatePageComponent } from './features/template/template-page/templat
 import { TemplateItemComponent } from "./features/template/template-item/template-item.component";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AnalyzePageComponent } from './features/analyze/analyze-page/analyze-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UploadFileAreaComponent,
     QuestionListComponent,
     TemplatePageComponent,
-    TemplateItemComponent
+    TemplateItemComponent,
+    AnalyzePageComponent
   ],
   imports: [
     HttpClientModule,
