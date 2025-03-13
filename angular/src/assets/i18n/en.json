@@ -42,10 +42,27 @@
             }
         }
     },
+    "lease_analysis": {
+      "retrieve": {
+        "error": "An Error occurred while retrieving the Lease Analysis",
+        "no_leases": "No Leases found"
+      },
+      "update": {
+        "error": "An Error occurred while updating the Lease Analysis",
+        "create_error": "An Error occurred while creating the Lease Analysis"
+      }
+    },
+    "question": {
+      "retrieve": {
+        "error": "An Error occurred while retrieving the Questions"
+      }
+    },
     "template": {
       "title": "Choose a Template",
       "subtitle": "Select a template to start your lease analysis.",
-      "select_template": "Select this Template"
+      "select_template": "Select this Template",
+      "no_templates": "No Templates found",
+      "retrieve_error": "An Error occurred while retrieving the Templates"
     },
     "breadcrumb": {
       "title_1": "Upload Lease",

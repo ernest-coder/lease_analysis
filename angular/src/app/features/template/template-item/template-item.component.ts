@@ -1,8 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { LeaseAnalysis } from 'src/app/shared/models/lease-analysis.model';
 import { Question } from 'src/app/shared/models/question.models';
 import { Template } from 'src/app/shared/models/template.models';
 import { AlertToastService } from 'src/app/shared/services/alert-toast.service';
+import { LeaseAnalysisService } from 'src/app/shared/services/lease-analysis.service';
 import { TemplateService } from 'src/app/shared/services/template.service';
 
 @Component({
@@ -18,11 +21,14 @@ export class TemplateItemComponent {
   categories: string[] = [];
 
   @Input() template: Template | undefined;
+  @Input() leaseAnalysis: LeaseAnalysis | undefined;
 
   constructor(
     private templateService: TemplateService,
     private alertToastService: AlertToastService,
     private router: Router,
+    private leaseAnalysisService: LeaseAnalysisService,
+    private translateService: TranslateService
   ) { }
 
   toggleQuestions(): void {
@@ -44,7 +50,8 @@ export class TemplateItemComponent {
         this.isLoading = false;
       },
       error => {
-        this.alertToastService.error('Error fetching questions:', error);
+        const message = this.translateService.instant('question.retrieve.error');
+        this.alertToastService.error(message);
         this.isLoading = false;
       }
     );
@@ -62,6 +69,24 @@ export class TemplateItemComponent {
 
   selectTemplate($event: Event): void {
     $event.stopPropagation();
-    this.router.navigate(['/analyze']);
+    if (!this.leaseAnalysis) {
+      const message_no_lease_analysis = this.translateService.instant('lease_analysis.retrieve.no_leases');
+      this.alertToastService.error(message_no_lease_analysis);
+      return;
+    }
+    if (!this.template) {
+      const message_no_template = this.translateService.instant('template.no_template');
+      this.alertToastService.error(message_no_template);
+      return;
+    }
+    this.leaseAnalysisService.setTemplateId(this.leaseAnalysis.id, this.template.id).subscribe({
+      next: (updatedLeaseAnalysis: LeaseAnalysis) => {
+      },
+      error: (error) => {
+        const message = this.translateService.instant('lease_analysis.update.error');
+        this.alertToastService.error(message);
+      }
+    });
+    this.router.navigate([`/analyze/${this.leaseAnalysis.id}`]);
   }
 }

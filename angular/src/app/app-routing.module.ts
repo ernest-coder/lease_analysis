@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'templates',
+    path: 'templates/:id',
     component: TemplatePageComponent
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: QuestionListComponent
   },
   {
-    path: 'analyze',
+    path: 'analyze/:id',
     component: AnalyzePageComponent
   },
   

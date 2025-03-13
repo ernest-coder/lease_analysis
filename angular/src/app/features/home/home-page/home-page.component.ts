@@ -3,8 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError, from, Subject, takeUntil } from 'rxjs';
+import { LeaseAnalysis } from 'src/app/shared/models/lease-analysis.model';
 import { AlertToastService } from 'src/app/shared/services/alert-toast.service';
+import { LeaseAnalysisService } from 'src/app/shared/services/lease-analysis.service';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
+import { v4 as uuidv4 } from 'uuid'; 
 
 @Component({
   selector: 'app-home-page',
@@ -17,13 +20,16 @@ export class HomePageComponent implements OnDestroy {
   formGroup: FormGroup;
   isLoading: boolean = false;
   selectedFiles: File[] = [];
+  leaseAnalysis: LeaseAnalysis | undefined;
 
   constructor(
     private fb: FormBuilder,
     private supabaseService: SupabaseService,
     private translateService: TranslateService,
     private alertToastService: AlertToastService,
+    private leaseAnalysisService: LeaseAnalysisService,
     private router: Router,
+
   ) {
     this.formGroup = this.fb.group({
       file: [null, Validators.required],
@@ -54,7 +60,9 @@ export class HomePageComponent implements OnDestroy {
 
   uploadFile(file: File): void {
     const supabase = this.supabaseService.getClient();
-    const filePath = `${file.name}`;
+    const randomSuffix = uuidv4();
+
+    const filePath = `${file.name.split('.')[0]}_${randomSuffix}.${file.name.split('.').pop()}`;
 
     const upload$ = from(supabase.storage.from('input').upload(filePath, file));
 
@@ -71,7 +79,16 @@ export class HomePageComponent implements OnDestroy {
         const message = this.translateService.instant('lease_import.create.success');
         this.alertToastService.success(message)
         this.isLoading = false;
-        this.router.navigate([`/templates/`]);
+        this.leaseAnalysisService.insertLeaseAnalysisFile(filePath).subscribe({
+          next: (leaseAnalysis) => {
+            this.leaseAnalysis = leaseAnalysis;
+            this.router.navigate([`/templates/${leaseAnalysis.id}`]);
+          },
+          error: (insertError) => {
+            const error_message = this.translateService.instant('lease_import.create.error');
+            this.alertToastService.error(error_message);
+          }
+        });
       },
       error => {
         const message = this.translateService.instant('lease_import.create.error');

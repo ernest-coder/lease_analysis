@@ -6,7 +6,7 @@
         <div *ngIf="templates && templates.length > 0" class="flex flex-col w-full">
             <div class="flex flex-col w-full gap-4">
                 <div *ngFor="let template of templates">
-                    <app-template-item [template]="template"></app-template-item>
+                    <app-template-item [template]="template" [leaseAnalysis]="leaseAnalysis" ></app-template-item>
                 </div>
             </div>
         </div>
