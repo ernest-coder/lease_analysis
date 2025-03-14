@@ -2,16 +2,18 @@
     <app-breadcrumb [progress]="3" class="mb-10"></app-breadcrumb>
 </div>
 
-<div class="flex flex-row gap-2 py-2">
+<div *ngIf="leaseAnalysis" class="flex flex-row gap-2 py-2">
 
     <!-- Visualize -->
-    <div *ngIf="leaseAnalysis && leaseAnalysis.file && fileUrl" class="w-1/2 h-100 min-h-96">
+    <div *ngIf="leaseAnalysis.file && fileUrl" class="w-1/2 h-100 min-h-96">
         <app-file-preview [fileUrl]="fileUrl" [fileName]="leaseAnalysis.file" [page]="1"></app-file-preview>
     </div>
 
     <!-- Summary -->
-    <!-- <div [ngClass]="{'w-full': getSourceType() === 'unknown', 'w-1/2': getSourceType() !== 'unknown'}" class="h-full">
-        <app-attachment-summary [attachment]="attachment"></app-attachment-summary>
-    </div> -->
+    <div class="w-1/2 h-100">
+        <app-analyze-detail
+            [leaseAnalysis]="leaseAnalysis"
+        ></app-analyze-detail>
+    </div>
 
 </div>

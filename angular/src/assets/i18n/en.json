@@ -68,6 +68,10 @@
       "generate_url_error": "Error generating signed URL.",
       "format_not_accepted": "This type of file can't be displayed."
     },
+    "analyze": {
+      "wait": "We are analyzing your lease. This can take a few minutes.",
+      "error": "An error occurred while analyzing the lease."
+    },
     "breadcrumb": {
       "title_1": "Upload Lease",
       "subtitle_1": "Upload your lease to start the analysis.",

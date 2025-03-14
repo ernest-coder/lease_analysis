@@ -20,6 +20,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AnalyzePageComponent } from './features/analyze/analyze-page/analyze-page.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AnalyzeDetailComponent } from './features/analyze/analyze-detail/analyze-detail.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     QuestionListComponent,
     TemplatePageComponent,
     TemplateItemComponent,
-    AnalyzePageComponent
+    AnalyzePageComponent,
+    AnalyzeDetailComponent,
   ],
   imports: [
     HttpClientModule,

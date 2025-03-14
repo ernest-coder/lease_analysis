@@ -1,0 +1,21 @@
+<div>
+    <!-- Loading skeleton -->
+    <div *ngIf="loading">
+        <div class="mt-6 items-center">
+            <span class="material-symbols-sharp animate-spin text-[15px]">autorenew</span>
+            <span>{{'analyze.wait'|translate}}</span>
+        </div>
+        <div class="animate-pulse space-y-4 pt-2 mb-6 mt-6">
+            <div class="h-6 bg-gray-200 rounded w-1/4"></div>
+            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+            <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
+        <div class="animate-pulse space-y-4 pt-2 mb-6">
+            <div class="h-6 bg-gray-200 rounded w-1/4"></div>
+            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+            <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
+    </div>
+
+
+</div>
