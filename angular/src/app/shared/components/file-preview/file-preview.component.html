@@ -1,0 +1,19 @@
+<div class="h-full flex flex-col gap-4">
+    <div class="flex justify-end">
+    </div>
+    <div *ngIf="getSourceType() === 'pdf'" class="pdf-container h-full w-full flex-1">
+        <pdf-viewer
+            *ngIf="fileUrl !== undefined"
+            [src]="fileUrl"
+            [page]="page"
+            [render-text]="true"
+            [original-size]="false"
+            class="h-full w-full bg-gray-50"
+        >
+        </pdf-viewer>
+    </div>
+
+    <div *ngIf="getSourceType() === 'unknown'" class="w-full text-center text-gray-500">
+        <span>{{ 'storage.format_not_accepted' | translate }}</span>
+    </div>
+</div>

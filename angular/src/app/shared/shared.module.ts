@@ -23,6 +23,10 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
 import { AlertToastComponent } from './components/alert-toast/alert-toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { SuspenseComponent } from './components/suspense/suspense.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FilePreviewComponent } from './components/file-preview/file-preview.component';
 
 
 
@@ -39,6 +43,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     ErrorDialogComponent,
     AlertToastComponent,
     BreadcrumbComponent,
+    SuspenseComponent,
+    FilePreviewComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -54,6 +60,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     ReactiveFormsModule,
     MatSnackBarModule,
     MatMenuModule,
+    TranslateModule,
+    PdfViewerModule
   ],
   exports: [
     ButtonPrimaryComponent,
@@ -67,6 +75,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     ErrorDialogComponent,
     AlertToastComponent,
     BreadcrumbComponent,
+    SuspenseComponent,
+    FilePreviewComponent,
   ],
   providers: [],
 })

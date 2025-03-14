@@ -19,6 +19,7 @@ import { TemplateItemComponent } from "./features/template/template-item/templat
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AnalyzePageComponent } from './features/analyze/analyze-page/analyze-page.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     SharedModule,
     MatTooltipModule,
+    PdfViewerModule
 ],
   providers: [
     {

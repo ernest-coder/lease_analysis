@@ -64,6 +64,10 @@
       "no_templates": "No Templates found",
       "retrieve_error": "An Error occurred while retrieving the Templates"
     },
+    "storage": {
+      "generate_url_error": "Error generating signed URL.",
+      "format_not_accepted": "This type of file can't be displayed."
+    },
     "breadcrumb": {
       "title_1": "Upload Lease",
       "subtitle_1": "Upload your lease to start the analysis.",
